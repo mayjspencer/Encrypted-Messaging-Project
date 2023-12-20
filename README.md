@@ -39,36 +39,6 @@ AES encryption, operating on 128-bit blocks, is used for securing messages. The 
 
 The shared password undergoes key derivation using PBKDF2-HMAC to transform it into a secure encryption key. Additionally, an Initialization Vector (IV) is introduced to add randomness and ensure different ciphertexts for identical messages.
 
-## **Implementation Details**
-
-### **Server-Side Implementation (server.py)**
-
-- **Key Generation:**
-  - Utilizes a key derivation function to transform the shared password into a secure encryption key.
-
-- **Encryption and Decryption:**
-  - Implements functions for encrypting and decrypting messages using AES encryption and IV generation.
-
-- **Server Setup:**
-  - Establishes a socket connection, listens for incoming connections, and handles shared password exchange with the client.
-
-- **Multithreading:**
-  - Utilizes threads to handle communication channels with multiple clients concurrently.
-
-### **Client-Side Implementation (client.py)**
-
-- **Key Generation:**
-  - Similar to the server, generates a shared key using key derivation from the shared password.
-
-- **Encryption and Decryption:**
-  - Implements functions for encrypting and decrypting messages using AES encryption and IV generation.
-
-- **Connection Setup:**
-  - Initiates a connection to the server, securely exchanges the shared password, and establishes a secure communication channel.
-
-- **Communication Loop:**
-  - Manages the continuous exchange of encrypted messages between the client and server.
-
 ## **Sample Interaction**
 
    - Screenshots included in the repo show a simple walkthrough of the code running. The setup is two separate terminals, one running server.py and the other running client.py to represent 
