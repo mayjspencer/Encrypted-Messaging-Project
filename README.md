@@ -21,13 +21,10 @@ This project is a basic implementation of a secure point-to-point messaging syst
 5. **Connection Setup with Socket Programming:**
    - Establish an initial connection setup between Alice and Bob using socket/network programming, simulating internet communication.
 
-6. **Graphical User Interface (GUI):**
-   - Although a graphical user interface is preferred, for simplicity, two separate terminals will be used for the server and client interaction.
-
-7. **Message Uniqueness:**
+6. **Message Uniqueness:**
    - Ensure that repeated messages generate different ciphertexts for enhanced security.
 
-8. **Key Management System:**
+7. **Key Management System:**
    - Implement a key management mechanism to regularly update the encryption key shared between Alice and Bob, mitigating potential risks associated with long-term key usage.
 
 ## **System Architecture**
@@ -78,18 +75,11 @@ The shared password undergoes key derivation using PBKDF2-HMAC to transform it i
 
 ### **Sample Interaction**
 
-- **Server Start:**
-  - The server listens for connections.
+   - Screenshots included in the repo show a simple walkthrough of the code running. The setup is two separate terminals, one running server.py and the other running client.py to represent 
 
-- **Client Connection:**
-  - Bob sets a shared password, securely exchanged with Alice.
-
-- **Message Exchange:**
-  - Encrypted messages are exchanged, demonstrating different ciphertexts for repeated messages.
-
-- **Client Exit:**
-  - The client types "EXIT!" to end the communication, closing the connection.
+   - The server starts running and listening for a connection. It then accepts the connection from the client terminal. Bob sets the shared password to ‘hello’ which is securely sent to the client. Alice must match Bob’s password that he set for communication to begin. Once she does, she can send the first message - ‘hi’. Bob receives the message and it is decrypted. He responds with ‘hi’ as well. Even though they sent the same message, the ciphertext looks completely different.
+Alice responds with ‘bye’. Even though her message is twice as long as her last message, the ciphertexts are the same length. Bob types ‘EXIT!’ and the program completes.
 
 ## **Conclusion**
 
-The implemented Python code successfully creates a secure communication system using AES encryption, providing a secure channel for messages between two parties. Enhancements, such as the addition of a graphical user interface, could further improve the user experience.
+The implemented Python code  creates a secure communication system using AES encryption, providing a secure channel for messages between two parties. Enhancements, such as the addition of a graphical user interface, could further improve the user experience.
