@@ -31,10 +31,6 @@ This project is a basic implementation of a secure point-to-point messaging syst
 
 The system adopts a client-server architecture, where the server acts as a centralized hub managing the secure communication channel. The process involves connection establishment, key exchange, and secure message transmission.
 
-## **Sockets**
-
-Communication between Alice and Bob is facilitated through sockets, with the client-side managing the connection initiation and the server-side listening for incoming connections.
-
 ## **Encryption (AES)**
 
 AES encryption, operating on 128-bit blocks, is used for securing messages. The Crypto.Cipher module from the pycryptodome library is leveraged for efficient implementation.
