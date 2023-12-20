@@ -1,4 +1,4 @@
-# Encrypted-Message-Project
+# Encrypted-Messaging-Project
 Final Project for my Computer Security class (CS 4173)
 
 This project is a basic implementation of a secure point-to-point messaging system. 
