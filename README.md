@@ -3,69 +3,93 @@ Final Project for my Computer Security class (CS 4173)
 
 This project is a basic implementation of a secure point-to-point messaging system. 
 
-Objectives
 
-Secure Message Exchange:
-Enable secure messaging between two parties, Alice and Bob, over the internet.
-Password-Based Encryption:
-Implement a password-based encryption system where Alice and Bob share a common password for secure message exchange.
-Strong Encryption:
-Utilize 128-bit AES encryption to ensure a high level of security.
-Padding Mechanism:
-Implement a padding mechanism to standardize the length of encrypted messages, enhancing system security.
-Connection Setup with Socket Programming:
-Establish an initial connection setup between Alice and Bob using socket/network programming, simulating internet communication.
-Graphical User Interface (GUI):
-Although a graphical user interface is preferred, for simplicity, two separate terminals will be used for the server and client interaction.
-Message Uniqueness:
-Ensure that repeated messages generate different ciphertexts for enhanced security.
-Key Management System:
-Implement a key management mechanism to regularly update the encryption key shared between Alice and Bob, mitigating potential risks associated with long-term key usage.
-System Architecture
+## **Objectives**
+
+1. **Secure Message Exchange:**
+   - Enable secure messaging between two parties, Alice and Bob, over the internet.
+
+2. **Password-Based Encryption:**
+   - Implement a password-based encryption system where Alice and Bob share a common password for secure message exchange.
+
+3. **Strong Encryption:**
+   - Utilize 128-bit AES encryption to ensure a high level of security.
+
+4. **Padding Mechanism:**
+   - Implement a padding mechanism to standardize the length of encrypted messages, enhancing system security.
+
+5. **Connection Setup with Socket Programming:**
+   - Establish an initial connection setup between Alice and Bob using socket/network programming, simulating internet communication.
+
+6. **Graphical User Interface (GUI):**
+   - Although a graphical user interface is preferred, for simplicity, two separate terminals will be used for the server and client interaction.
+
+7. **Message Uniqueness:**
+   - Ensure that repeated messages generate different ciphertexts for enhanced security.
+
+8. **Key Management System:**
+   - Implement a key management mechanism to regularly update the encryption key shared between Alice and Bob, mitigating potential risks associated with long-term key usage.
+
+## **System Architecture**
 
 The system adopts a client-server architecture, where the server acts as a centralized hub managing the secure communication channel. The process involves connection establishment, key exchange, and secure message transmission.
 
-Sockets
+## **Sockets**
 
 Communication between Alice and Bob is facilitated through sockets, with the client-side managing the connection initiation and the server-side listening for incoming connections.
 
-Encryption (AES)
+## **Encryption (AES)**
 
 AES encryption, operating on 128-bit blocks, is used for securing messages. The Crypto.Cipher module from the pycryptodome library is leveraged for efficient implementation.
 
-Key Derivation
+## **Key Derivation**
 
 The shared password undergoes key derivation using PBKDF2-HMAC to transform it into a secure encryption key. Additionally, an Initialization Vector (IV) is introduced to add randomness and ensure different ciphertexts for identical messages.
 
-Implementation Details
+## **Implementation Details**
 
-Server-Side Implementation (server.py)
-Key Generation:
-Utilizes a key derivation function to transform the shared password into a secure encryption key.
-Encryption and Decryption:
-Implements functions for encrypting and decrypting messages using AES encryption and IV generation.
-Server Setup:
-Establishes a socket connection, listens for incoming connections, and handles shared password exchange with the client.
-Multithreading:
-Utilizes threads to handle communication channels with multiple clients concurrently.
-Client-Side Implementation (client.py)
-Key Generation:
-Similar to the server, generates a shared key using key derivation from the shared password.
-Encryption and Decryption:
-Implements functions for encrypting and decrypting messages using AES encryption and IV generation.
-Connection Setup:
-Initiates a connection to the server, securely exchanges the shared password, and establishes a secure communication channel.
-Communication Loop:
-Manages the continuous exchange of encrypted messages between the client and server.
-Sample Interaction
-Server Start:
-The server listens for connections.
-Client Connection:
-Bob sets a shared password, securely exchanged with Alice.
-Message Exchange:
-Encrypted messages are exchanged, demonstrating different ciphertexts for repeated messages.
-Client Exit:
-The client types "EXIT!" to end the communication, closing the connection.
-Conclusion
+### **Server-Side Implementation (server.py)**
+
+- **Key Generation:**
+  - Utilizes a key derivation function to transform the shared password into a secure encryption key.
+
+- **Encryption and Decryption:**
+  - Implements functions for encrypting and decrypting messages using AES encryption and IV generation.
+
+- **Server Setup:**
+  - Establishes a socket connection, listens for incoming connections, and handles shared password exchange with the client.
+
+- **Multithreading:**
+  - Utilizes threads to handle communication channels with multiple clients concurrently.
+
+### **Client-Side Implementation (client.py)**
+
+- **Key Generation:**
+  - Similar to the server, generates a shared key using key derivation from the shared password.
+
+- **Encryption and Decryption:**
+  - Implements functions for encrypting and decrypting messages using AES encryption and IV generation.
+
+- **Connection Setup:**
+  - Initiates a connection to the server, securely exchanges the shared password, and establishes a secure communication channel.
+
+- **Communication Loop:**
+  - Manages the continuous exchange of encrypted messages between the client and server.
+
+### **Sample Interaction**
+
+- **Server Start:**
+  - The server listens for connections.
+
+- **Client Connection:**
+  - Bob sets a shared password, securely exchanged with Alice.
+
+- **Message Exchange:**
+  - Encrypted messages are exchanged, demonstrating different ciphertexts for repeated messages.
+
+- **Client Exit:**
+  - The client types "EXIT!" to end the communication, closing the connection.
+
+## **Conclusion**
 
 The implemented Python code successfully creates a secure communication system using AES encryption, providing a secure channel for messages between two parties. Enhancements, such as the addition of a graphical user interface, could further improve the user experience.
