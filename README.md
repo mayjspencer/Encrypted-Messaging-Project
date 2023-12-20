@@ -73,7 +73,7 @@ The shared password undergoes key derivation using PBKDF2-HMAC to transform it i
 - **Communication Loop:**
   - Manages the continuous exchange of encrypted messages between the client and server.
 
-### **Sample Interaction**
+## **Sample Interaction**
 
    - Screenshots included in the repo show a simple walkthrough of the code running. The setup is two separate terminals, one running server.py and the other running client.py to represent 
 
