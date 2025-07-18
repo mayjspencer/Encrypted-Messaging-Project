@@ -41,7 +41,10 @@ The shared password undergoes key derivation using PBKDF2-HMAC to transform it i
 
 ## **Sample Interaction**
 
-Screenshots included in the repo show a simple walkthrough of the code running. The setup is two separate terminals, one running server.py and the other running client.py to represent 
+Screenshots included in the repo show a simple walkthrough of the code running.
+![Alt text](relative/path/to/image.png)
+![Alt text](relative/path/to/image.png)
+The setup is two separate terminals, one running server.py and the other running client.py to represent 
 
 The server starts running and listening for a connection. It then accepts the connection from the client terminal. Bob sets the shared password to ‘hello’ which is securely sent to the client. Alice must match Bob’s password that he set for communication to begin. Once she does, she can send the first message - ‘hi’. Bob receives the message and it is decrypted. He responds with ‘hi’ as well. Even though they sent the same message, the ciphertext looks completely different.
 Alice responds with ‘bye’. Even though her message is twice as long as her last message, the ciphertexts are the same length. Bob types ‘EXIT!’ and the program completes.
